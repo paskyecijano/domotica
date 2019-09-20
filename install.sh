@@ -105,6 +105,7 @@ philhawthorne/ha-dockermon:latest
 
 #################################################################
 # Instalacion del Contenedor de Ouroboros
+#-e NOTIFIERS=tgram://GRUPONUMEROLARGUISMO/CLIENTE \
 
 docker run -d \
 --name ouroboros \
@@ -112,7 +113,6 @@ docker run -d \
 --restart always \
 --privileged -itd \
 -e TZ=Europe/Madrid \
-#-e NOTIFIERS=tgram://GRUPONUMEROLARGUISMO/CLIENTE \
 -v /var/run/docker.sock:/var/run/docker.sock \
 pyouroboros/ouroboros:latest
 
