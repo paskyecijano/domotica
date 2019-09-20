@@ -110,7 +110,6 @@ philhawthorne/ha-dockermon:latest
 docker run -d \
 --name ouroboros \
 --net=host \
---restart none \
 --privileged -itd \
 -e TZ=Europe/Madrid \
 -v /var/run/docker.sock:/var/run/docker.sock \
