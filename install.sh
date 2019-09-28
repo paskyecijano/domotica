@@ -57,7 +57,7 @@ portainer/portainer
 docker create \
 --name home-assistant \
 --net=host \
---privileged -itd \
+--privileged -it \
 -v /homeassistant:/config \
 -e TZ=Europe/Madrid \
 -v /dev/bus/usb:/dev/bus/usb \
@@ -70,7 +70,7 @@ homeassistant/home-assistant
 docker create \
 --name z2m \
 --net=host \
---privileged -itd \
+--privileged -it \
 --device=/dev/ttyACM0 \
 -v /z2m:/app/data \
 -e TZ=Europe/Madrid \
@@ -82,7 +82,7 @@ koenkk/zigbee2mqtt:latest
 docker create \
 --name z2m-dev \
 --net=host \
---privileged -itd \
+--privileged -it \
 --device=/dev/ttyACM0 \
 -v /z2m:/app/data \
 -e TZ=Europe/Madrid \
@@ -107,7 +107,7 @@ docker run -d \
 --name dockermon \
 --net=host \
 --restart always \
---privileged -itd \
+--privileged -it \
 -v /dockermon:/config \
 -v /var/run/docker.sock:/var/run/docker.sock \
 philhawthorne/ha-dockermon:latest
@@ -119,7 +119,7 @@ philhawthorne/ha-dockermon:latest
 docker create \
 --name ouroboros \
 --net=host \
---privileged -itd \
+--privileged -it \
 -e TZ=Europe/Madrid \
 -v /var/run/docker.sock:/var/run/docker.sock \
 pyouroboros/ouroboros:latest
