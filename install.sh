@@ -168,5 +168,5 @@ tee -a /etc/samba/smb.conf << EOF
   directory mask = 0777
 EOF
 
-smbpasswd -a root
-/usr/sbin/service smbd restart
+sudo smbpasswd -a root
+sudo /usr/sbin/service smbd restart
