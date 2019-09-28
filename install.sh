@@ -9,7 +9,7 @@ timedatectl set-timezone Europe/Madrid
 
 #################################################################
 # Permisos sobre USB
-sudo usermod -a -G dialout USUARIO
+sudo usermod -a -G dialout usuario
 
 #################################################################
 # Creacion de directorios
@@ -57,7 +57,6 @@ portainer/portainer
 docker run -d \
 --name home-assistant \
 --net=host \
---restart always \
 --privileged -itd \
 -v /homeassistant:/config \
 -e TZ=Europe/Madrid \
@@ -71,7 +70,6 @@ homeassistant/home-assistant
 docker run -d \
 --name z2m \
 --net=host \
---restart always \
 --privileged -itd \
 --device=/dev/ttyACM0 \
 -v /z2m:/app/data \
@@ -79,11 +77,22 @@ docker run -d \
 koenkk/zigbee2mqtt:latest
 
 #################################################################
+# Instalacion del Contenedor de Z2M-DEV
+
+docker run -d \
+--name z2m-dev \
+--net=host \
+--privileged -itd \
+--device=/dev/ttyACM0 \
+-v /z2m:/app/data \
+-e TZ=Europe/Madrid \
+koenkk/zigbee2mqtt:latest-dev
+
+#################################################################
 # Instalacion del Contenedor de MQTT
 
 docker run -itd \
 --name mqtt \
---restart always \
 --net=host \
 -v /mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf \
 -v /mqtt/data:/mosquitto/data \
