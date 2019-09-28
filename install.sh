@@ -54,7 +54,7 @@ portainer/portainer
 #################################################################
 # Instalacion del Contenedor de Home-Assistant
 
-docker run -d \
+docker create -d \
 --name home-assistant \
 --net=host \
 --privileged -itd \
@@ -67,7 +67,7 @@ homeassistant/home-assistant
 #################################################################
 # Instalacion del Contenedor de Z2M
 
-docker run -d \
+docker create -d \
 --name z2m \
 --net=host \
 --privileged -itd \
@@ -79,7 +79,7 @@ koenkk/zigbee2mqtt:latest
 #################################################################
 # Instalacion del Contenedor de Z2M-DEV
 
-docker run -d \
+docker create -d \
 --name z2m-dev \
 --net=host \
 --privileged -itd \
@@ -91,7 +91,7 @@ koenkk/zigbee2mqtt:latest-dev
 #################################################################
 # Instalacion del Contenedor de MQTT
 
-docker run -itd \
+docker create -itd \
 --name mqtt \
 --net=host \
 -v /mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf \
@@ -116,7 +116,7 @@ philhawthorne/ha-dockermon:latest
 # Instalacion del Contenedor de Ouroboros
 #-e NOTIFIERS=tgram://GRUPONUMEROLARGUISMO/CLIENTE \
 
-docker run -d \
+docker create -d \
 --name ouroboros \
 --net=host \
 --privileged -itd \
