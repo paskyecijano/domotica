@@ -9,7 +9,7 @@ timedatectl set-timezone Europe/Madrid
 
 #################################################################
 # Permisos sobre USB
-sudo usermod -a -G dialout usuario
+sudo usermod -a -G dialout domotica
 
 #################################################################
 # Creacion de directorios
