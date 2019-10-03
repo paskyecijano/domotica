@@ -44,7 +44,7 @@ apt update -y && apt upgrade -y && apt autoremove -y
 
 docker volume create portainer_data
 docker run -d \
---name=Portainer \
+--name=portainer \
 --net=host \
 --restart always \
 -v /var/run/docker.sock:/var/run/docker.sock \
