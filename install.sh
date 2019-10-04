@@ -89,6 +89,17 @@ docker create \
 koenkk/zigbee2mqtt:latest-dev
 
 #################################################################
+# Instalacion del Zigbee2mqtt Assistant
+
+docker create \
+--name z2m-Assistant \
+--net=host \
+--privileged -it \
+-e TZ=Europe/Madrid \
+-e Z2MA_SETTINGS__MQTTSERVER=127.0.0.1 \
+carldebilly/zigbee2mqttassistant
+
+#################################################################
 # Instalacion del Contenedor de MQTT
 
 docker create \
