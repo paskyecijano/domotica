@@ -92,7 +92,7 @@ koenkk/zigbee2mqtt:latest-dev
 # Instalacion del Zigbee2mqtt Assistant
 
 docker create \
---name z2m-Assistant \
+--name z2m-assistant \
 --net=host \
 --privileged -it \
 -e TZ=Europe/Madrid \
