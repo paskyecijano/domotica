@@ -148,8 +148,8 @@ docker create \
 --net=host \
 --restart always \
 --privileged -it \
--v /unifi/log:/log \
--v /unifi/data:/data \
+-v /unifi/unifi:/unifi \
+-v /unifi/var/:/var/run/unifi \
 -e TZ=Europe/Madrid \
 jacobalberty/unifi:stable
 
