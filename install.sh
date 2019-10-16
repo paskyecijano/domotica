@@ -27,8 +27,8 @@ mkdir /dockermon
 chmod 777 /dockermon
 
 mkdir /unifi
-mkdir /unifi/data
-mkdir /unifi/log
+mkdir /unifi/unifi
+mkdir /unifi/var
 chmod -R 777 /unifi
 
 #################################################################
