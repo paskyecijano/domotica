@@ -26,6 +26,11 @@ chmod 777 /z2m
 mkdir /dockermon
 chmod 777 /dockermon
 
+mkdir /unifi
+mkdir /unifi/data
+mkdir /unifi/log
+chmod -R 777 /unifi
+
 #################################################################
 # Instalacion de Dependencias
 
@@ -134,6 +139,19 @@ docker create \
 -e TZ=Europe/Madrid \
 -v /var/run/docker.sock:/var/run/docker.sock \
 pyouroboros/ouroboros:latest
+
+#################################################################
+# Instalacion del Controlador Unifi
+
+docker create \
+--name unifi \
+--net=host \
+--restart always \
+--privileged -it \
+-v /unifi/log:/log \
+-v /unifi/data:/data \
+-e TZ=Europe/Madrid \
+jacobalberty/unifi:stable
 
 #################################################################
 # Instalacion y configuracion de SAMBA
